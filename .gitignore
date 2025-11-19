@@ -1,2 +1,26 @@
 .env
 venv/
+.vscode/
+
+# --- NODE / NEXT.JS ---
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.env
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.production.local
+
+# --- PYTHON / FASTAPI ---
+backend/.venv/
+backend/__pycache__/
+backend/.env
+backend/.env.local
+
+# --- OS / EDITOR ---
+.DS_Store
+*.log
+
+# --- PYTEST / CACHE ---
+backend/.pytest_cache/
+backend/.mypy_cache/
