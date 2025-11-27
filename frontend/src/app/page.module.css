@@ -1,0 +1,20 @@
+.homePage{
+    display: flex;
+    margin: 5 5px;
+    gap: 20px;
+}
+
+.itineraryWindow{
+    background: white;
+    width: 60%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 10px;
+    color: black;
+}
+
+.options{
+    background: #3a03b0;
+    width: 40%;
+    height: 50%;
+}

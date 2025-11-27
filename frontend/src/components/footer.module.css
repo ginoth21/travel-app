@@ -1,0 +1,21 @@
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #2bd002;
+    color: white;
+    text-align: center;
+}
+
+.footerLinks{
+    display: flex;
+    gap: 20px;       /* space between nav items */
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: right;
+    font-size: x-large; 
+}
