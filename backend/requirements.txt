@@ -23,7 +23,6 @@ langchain-groq==0.3.8
 langchain-openai==0.3.35
 langchain-text-splitters==0.3.11
 langsmith==0.4.37
-openai==2.8.1
 orjson==3.11.4
 packaging==25.0
 pydantic==2.12.4

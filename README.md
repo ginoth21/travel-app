@@ -1,16 +1,23 @@
 # travel-app
 
+## add Llama API Key
+cd backend<br>
+create .env file with following:<br>
+GROQ_API_KEY={api_key}<br>
+
+Can get keys from https://console.groq.com/home<br>
+
 ## Set up
-cd backend
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+cd backend<br>
+python3 -m venv .venv<br>
+source .venv/bin/activate<br>
+pip install -r requirements.txt<br>
 
 ## Run frontend
-cd frontend
-npm run dev
+cd frontend<br>
+npm run dev<br>
 
 ## Run backend
-cd backend
-source ./.venv/bin/activate 
-uvicorn main:app --reload
+cd backend<br>
+source ./.venv/bin/activate<br>
+uvicorn main:app --reload<br>
