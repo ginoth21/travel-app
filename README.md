@@ -20,4 +20,5 @@ npm run dev<br>
 ## Run backend
 cd backend<br>
 source ./.venv/bin/activate<br>
+cd app<br>
 uvicorn main:app --reload<br>

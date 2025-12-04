@@ -1,3 +1,6 @@
+"use client";
+
+import Button from "@/components/button";
 import styles from "./page.module.css";
 
 async function getMessage() {
@@ -5,7 +8,7 @@ async function getMessage() {
   return res.json();
 }
 
-export default async function Home() {
+export default function Home() {
 
   // var data = await getMessage();
 
@@ -24,6 +27,7 @@ export default async function Home() {
               <li><p>Destination</p></li>
               <li><p>Duration</p></li>
               <li><p>Preferences</p></li>
+              <li><Button label={"Generate"}/></li>
             </ul>
         </div>
       </div>
