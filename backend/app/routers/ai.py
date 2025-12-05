@@ -13,5 +13,5 @@ async def hello():
 @router.get("/generate")
 async def generate():
     ai_answer = llama.ask("Provide a 2 day itinerary for a trip to New York City. Provide this in a JSON format with only the JSON body.")
-    response = ai_answer.content
+    response = json.loads(ai_answer.content)
     return {"message": response}

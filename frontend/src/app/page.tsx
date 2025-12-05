@@ -1,16 +1,12 @@
 "use client";
 
+import { useState } from "react";
 import Button from "@/components/button";
 import styles from "./page.module.css";
 
-async function getMessage() {
-  const res = await fetch("http://localhost:8000");
-  return res.json();
-}
-
 export default function Home() {
 
-  // var data = await getMessage();
+  const [itinerary, setItinerary] = useState(null);
 
   return (
     <main>
@@ -19,6 +15,7 @@ export default function Home() {
         <div className={styles.itineraryWindow}>
           <h1>Results</h1>
           <p> Pls provide info on the right side to get started </p>
+          <p> {JSON.stringify(itinerary)} </p>
         </div>
 
         <div className={styles.options}>
@@ -27,7 +24,7 @@ export default function Home() {
               <li><p>Destination</p></li>
               <li><p>Duration</p></li>
               <li><p>Preferences</p></li>
-              <li><Button label={"Generate"}/></li>
+              <li><Button label={"Generate"} buttonFxn={(result) => setItinerary(result)}/></li>
             </ul>
         </div>
       </div>

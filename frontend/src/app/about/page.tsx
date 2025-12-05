@@ -1,11 +1,8 @@
+import {getMessage} from "@/utils/api"
+
 export default async function Home() {
 
-  async function getMessage() {
-    const res = await fetch("http://localhost:8000");
-    return res.json();
-  }
-
-  var data = await getMessage();
+  var data = await getMessage("");
 
   return (
     <main>
