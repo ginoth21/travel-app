@@ -7,7 +7,7 @@ GROQ_API_KEY={api_key}<br>
 
 Can get keys from https://console.groq.com/home<br>
 
-## Set up
+## Set up environment
 cd backend<br>
 python3 -m venv .venv<br>
 source .venv/bin/activate<br>
