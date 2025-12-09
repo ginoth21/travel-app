@@ -1,19 +1,15 @@
 import styles from "./button.module.css";
-import {getMessage} from "@/utils/api"
 
 type ButtonType = {
   label: string;
-  buttonFxn: (result: any) => void;
+  // buttonFxn: (result: any) => void;
+  clickFxn: () => void | Promise<void>;
 };
 
-export default function Button({ label, buttonFxn }: ButtonType) {
-  const generateClick = async () => {
-    var data = await getMessage("/ai/generate");
-    buttonFxn(data.message)
-  };
+export default function Button({ label, clickFxn }: ButtonType) {
 
   return (
-    <button className={styles.button} onClick={generateClick}> 
+    <button className={styles.button} onClick={clickFxn}> 
         {label} 
     </button>
   );

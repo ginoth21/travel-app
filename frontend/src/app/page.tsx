@@ -3,10 +3,16 @@
 import { useState } from "react";
 import Button from "@/components/button";
 import styles from "./page.module.css";
+import {getMessage} from "@/utils/api";
 
 export default function Home() {
 
   const [itinerary, setItinerary] = useState(null);
+
+  const generateClick = async () => {
+    var data = await getMessage("/ai/generate");
+    setItinerary(data.message);
+  };
 
   return (
     <main>
@@ -24,7 +30,7 @@ export default function Home() {
               <li><p>Destination</p></li>
               <li><p>Duration</p></li>
               <li><p>Preferences</p></li>
-              <li><Button label={"Generate"} buttonFxn={(result) => setItinerary(result)}/></li>
+              <li><Button label={"Generate"} clickFxn={generateClick}/></li>
             </ul>
         </div>
       </div>
