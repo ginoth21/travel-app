@@ -3,14 +3,18 @@
 import { useState } from "react";
 import Button from "@/components/button";
 import styles from "./page.module.css";
-import {getMessage} from "@/utils/api";
+import {generateItinerary} from "@/utils/api";
 
 export default function Home() {
 
   const [itinerary, setItinerary] = useState(null);
+  const [destination, setDestination] = useState("");
+  const [num_days, setNumDays] = useState(0);
+
+  console.log(num_days);
 
   const generateClick = async () => {
-    var data = await getMessage("/ai/generate");
+    var data = await generateItinerary(destination, num_days);
     setItinerary(data.message);
   };
 
@@ -27,11 +31,19 @@ export default function Home() {
         <div className={styles.options}>
           <h1>Options</h1>
             <ul>
-              <li><p>Destination</p></li>
-              <li><p>Duration</p></li>
+              <li>
+                <p>Destination</p>
+                <input type="text" placeholder="Enter Location" value={destination} onChange={(e) => setDestination(e.target.value)}></input>
+              </li>
+
+              <li>
+                <p>Duration</p>
+                <input type="number" placeholder="Enter # of days" onChange={(e) => setNumDays(Number(e.target.value))} min={1}></input>
+              </li>
+
               <li><p>Preferences</p></li>
-              <li><Button label={"Generate"} clickFxn={generateClick}/></li>
             </ul>
+            <Button label={"Generate"} clickFxn={generateClick}/>
         </div>
       </div>
     </main>
