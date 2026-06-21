@@ -13,6 +13,7 @@ async function callAPI(endpoint: string, httpMethod: string, reqHeaders: Headers
 }
 
 export async function generateItinerary(destination: string, num_days: number) {
+    if (!destination || num_days <= 0) return null;
     var reqHeaders = { "Content-Type": "application/json" };
     var payload = JSON.stringify(
         {

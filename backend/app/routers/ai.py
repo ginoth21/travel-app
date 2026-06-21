@@ -19,6 +19,6 @@ async def hello():
 async def generate(request: itineraryRequest):
     destination = request.destination
     num_days = request.days
-    ai_answer = llama.ask("Provide a " + num_days + " day itinerary for a trip to " + destination + " . Provide this in a JSON format with only the JSON body.")
+    ai_answer = llama.ask("Provide a " + num_days + " day itinerary for a trip to " + destination + " . Provide this in a JSON format with only the JSON body. It must include name of activity, location, and time. Return ONLY valid JSON, don't include markdown or any other text not in valid JSON format.")
     response = json.loads(ai_answer.content)
     return {"message": response}

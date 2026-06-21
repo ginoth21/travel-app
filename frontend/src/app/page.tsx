@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Button from "@/components/button";
+import DisplayItinerary from "@/components/displayItinerary";
 import styles from "./page.module.css";
 import {generateItinerary} from "@/utils/api";
 
@@ -11,11 +12,9 @@ export default function Home() {
   const [destination, setDestination] = useState("");
   const [num_days, setNumDays] = useState(0);
 
-  console.log(num_days);
-
   const generateClick = async () => {
     var data = await generateItinerary(destination, num_days);
-    setItinerary(data.message);
+    if (data) setItinerary(data.message);
   };
 
   return (
@@ -24,8 +23,7 @@ export default function Home() {
       <div className={styles.homePage}>
         <div className={styles.itineraryWindow}>
           <h1>Results</h1>
-          <p> Pls provide info on the right side to get started </p>
-          <p> {JSON.stringify(itinerary)} </p>
+          {itinerary ? <DisplayItinerary itinerary={itinerary}/> : <p> Pls provide info on the right side to get started </p>}
         </div>
 
         <div className={styles.options}>
